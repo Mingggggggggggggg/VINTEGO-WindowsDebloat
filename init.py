@@ -1,6 +1,8 @@
 import argparse
 import os
 import sys
+import debloat as db
+import dataManager as dM
 import logger as log
 
 
@@ -60,6 +62,15 @@ def main():
     args = getArgs()
     log.cleanLog()
 
+    if args.debloat:
+        pass
     
+    if args.telemetry:
+        pass
 
-    pass
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("Anwendung durch Nutzer beendet")

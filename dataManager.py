@@ -1,12 +1,15 @@
 import json
 
-def loadFile(path, entry_type):
+def loadFile(path, type):
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    for section in data:
-        if entry_type in section:
-            return section[entry_type]
-    return None
+
+    for i in data:
+        if type in i:
+            return i[type]
+
+    return []
+
 
 
 print(loadFile("debloatList.json", "debloat"))

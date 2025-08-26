@@ -1,18 +1,26 @@
 [
     {
         "debloat": [
-            {"name": "test"},
-            {"name": "test"},
-            {"name": "test"},
-            {"name": "test"}            
+            "test1",
+            "test1",
+            "test1",
+            "test1",
+            "test1",
+            "test1",
+            "test1",
+            "test1"          
         ]
     },
     {
         "telemetry": [
-            {"name": "test"},
-            {"name": "test"},
-            {"name": "test"},
-            {"name": "test"}
+            "test1",
+            "test1",
+            "test1",
+            "test1",
+            "test1",
+            "test1",
+            "test1",
+            "test1"  
         ]
     }
 ]
