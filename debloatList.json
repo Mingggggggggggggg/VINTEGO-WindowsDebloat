@@ -13,14 +13,13 @@
     },
     {
         "telemetry": [
-            "test1",
-            "test1",
-            "test1",
-            "test1",
-            "test1",
-            "test1",
-            "test1",
-            "test1"  
+            "Location Tracking",
+            "Telemetry",
+            "GameDVR",
+            "WiFi Sense",
+            "Recall",
+            "Background Apps",
+            "Intel LMS"
         ]
     }
 ]
