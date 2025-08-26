@@ -1,0 +1,18 @@
+[
+    {
+        "debloat": [
+            {"name": "test"},
+            {"name": "test"},
+            {"name": "test"},
+            {"name": "test"}            
+        ]
+    },
+    {
+        "telemetry": [
+            {"name": "test"},
+            {"name": "test"},
+            {"name": "test"},
+            {"name": "test"}
+        ]
+    }
+]
