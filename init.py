@@ -3,6 +3,7 @@ import os
 import sys
 import debloat as db
 import dataManager as dM
+import setTelemetry as sT
 import logger as log
 
 
@@ -12,7 +13,7 @@ fullDataPath = os.path.join(dataPath, dataFile)
 
 def getArgs():
     parser = argparse.ArgumentParser(
-        prog="""
+        prog=r"""
  __     _____ _   _ _____ _____ ____  ___                     
  \ \   / /_ _| \ | |_   _| ____/ ___|/ _ \                    
   \ \ / / | ||  \| | | | |  _|| |  _| | | |                   
@@ -51,7 +52,7 @@ def getArgs():
     )
 
     parser.add_argument(
-        "-a", "-add",
+        "-i", "--include",
         type=str,
         help="Weitere Programme, zur Deinstallation eingeben. [Nur bei --debloat]"
     )
@@ -61,11 +62,29 @@ def getArgs():
 def main():
     args = getArgs()
     log.cleanLog()
+    print(r"""
+------------------------------------------------------------------
+ __     _____ _   _ _____ _____ ____  ___                     
+ \ \   / /_ _| \ | |_   _| ____/ ___|/ _ \                    
+  \ \ / / | ||  \| | | | |  _|| |  _| | | |                   
+   \ V /  | || |\  | | | | |__| |_| | |_| |                   
+  __\_/ _|___|_|_\_|_|_| |_____\____|\___/  _____           _ 
+ |  _ \| ____| __ )| |   / _ \  / \|_   _| |_   _|__   ___ | |
+ | | | |  _| |  _ \| |  | | | |/ _ \ | |     | |/ _ \ / _ \| |
+ | |_| | |___| |_) | |__| |_| / ___ \| |     | | (_) | (_) | |
+ |____/|_____|____/|_____\___/_/   \_\_|     |_|\___/ \___/|_|
+-------------------------------------------------------------------                                                              
+"""
+    )
 
     if args.debloat:
+        data = dM.processData(fullDataPath, "debloat", args.exlude, args.include)
+        db.uninstall(data)
         pass
     
     if args.telemetry:
+        data = dM.processData(fullDataPath, "telemetry", args.exlude)
+        sT.initTelemetry(data, False)
         pass
 
 

@@ -1,14 +1,7 @@
 [
     {
         "debloat": [
-            "test1",
-            "test1",
-            "test1",
-            "test1",
-            "test1",
-            "test1",
-            "test1",
-            "test1"          
+            "test1"
         ]
     },
     {
@@ -18,8 +11,7 @@
             "GameDVR",
             "WiFi Sense",
             "Recall",
-            "Background Apps",
-            "Intel LMS"
+            "Background Apps"
         ]
     }
 ]

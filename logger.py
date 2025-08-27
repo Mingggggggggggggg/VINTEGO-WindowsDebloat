@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-fullPath=r"C:\VINTEGO-Technik\Logs\VINDFR_Resultlog.txt"
+fullPath=r"C:\VINTEGO-Technik\Logs\VINTEGO Debloat Tool.txt"
 def cleanLog():
     os.makedirs(os.path.dirname(fullPath), exist_ok=True)
     
