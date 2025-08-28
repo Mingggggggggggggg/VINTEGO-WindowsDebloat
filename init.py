@@ -84,12 +84,12 @@ def main():
     )
 
     if args.debloat:
-        data = dM.processData(fullDataPath, "debloat", args.exlude, args.include)
+        data = dM.processData(fullDataPath, "debloat", args.exclude, args.include)
         db.uninstall(data)
         pass
     
-    if args.telemetry:
-        data = dM.processData(fullDataPath, "telemetry", args.exlude)
+    if args.privacy:
+        data = dM.processData(fullDataPath, "telemetry", args.exclude)
         sP.initPrivacy(data, args.undo)
         pass
 
