@@ -1,7 +1,9 @@
 [
     {
         "debloat": [
-            "test1"
+            "Microsoft.Copilot",
+            "AmazonVideo.PrimeVideo",
+            "king.com.CandyCrushSaga"
         ]
     },
     {
