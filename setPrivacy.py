@@ -56,9 +56,7 @@ def setTask(taskPath, setting):
             print(f"Fehler beim Deaktivieren von {taskPath}: {e.stderr.strip()}")
             log.logMessage(f"Fehler beim Deaktivieren von {taskPath}: {e.stderr.strip()}")
 
-
-
-def initTelemetry(data, settings : bool = False):
+def initPrivacy(data, settings : bool = False):
     for i in data:
         match i:
             case "Location Tracking":
@@ -75,8 +73,6 @@ def initTelemetry(data, settings : bool = False):
                 configureMicrosoftBackgroundApps(settings)
             case  _:
                 print(f"Datenschutzliste Leer oder ungueltige Werte gefunden: {i}")
-
-
 
 def configureLocationTracking(settings: bool):
     keys = [
@@ -114,7 +110,6 @@ def configureLocationTracking(settings: bool):
     for key in keys:
         value = values[key["name"]]
         setRegistry(key["root"], key["path"], key["name"], key["valType"], value)
-
 
 def configureTelemetry(settings : bool):
     schedulePaths = [
@@ -455,7 +450,6 @@ def configureRecall(settings: bool):
     except subprocess.CalledProcessError as e:
         print(f"Fehler beim Deaktivieren von Recall: {e.stderr.strip()}")
         log.logMessage(f"Fehler beim Deaktivieren von Recall: {e.stderr.strip()}")
-
 
 def configureMicrosoftBackgroundApps(settings : bool):
 

@@ -3,7 +3,7 @@ import os
 import sys
 import debloat as db
 import dataManager as dM
-import setTelemetry as sT
+import setPrivacy as sP
 import logger as log
 
 
@@ -39,9 +39,9 @@ def getArgs():
         help="Deinstalliere Bloatware aus einer Liste"
     )
     mode_group.add_argument(
-        "-t", "--telemetry",
+        "-p", "--privacy",
         action="store_true",
-        help="Deaktiviere Telemetrieeinstellungen aus einer Liste"
+        help="Setze Datenschutzkonfigurationen aus einer Liste um"
     )
 
 
@@ -55,6 +55,12 @@ def getArgs():
         "-i", "--include",
         type=str,
         help="Weitere Programme, zur Deinstallation eingeben. [Nur bei --debloat]"
+    )
+
+    parser.add_argument(
+        "-u", "--undo",
+        action="store_true",
+        help="Setzt die Datenschutzkonfigurationen zurück"
     )
 
     return parser.parse_args()
@@ -84,7 +90,7 @@ def main():
     
     if args.telemetry:
         data = dM.processData(fullDataPath, "telemetry", args.exlude)
-        sT.initTelemetry(data, False)
+        sP.initPrivacy(data, args.undo)
         pass
 
 
