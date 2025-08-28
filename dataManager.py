@@ -1,6 +1,8 @@
 import json
-
+import logger as log
 def loadFile(path, type):
+    print("Lade Daten")
+    log.logMessage("Lade Daten")
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -24,10 +26,13 @@ def excludeItems(data, name):
     return data
 
 def includeItems(data, name):
+    print("Ergänze Liste")
+    log.logMessage("Ergänze Liste")
     for i in name.split(","):
         i = i.strip()
         if i in data:
             print(f"Der Name {i} existiert bereits in der Liste")
+            log.logMessage(f"Der Name {i} existiert bereits in der Liste")
         else:
             data.append(i)
     return data

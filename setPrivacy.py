@@ -443,7 +443,8 @@ def configureRecall(settings: bool):
             ["powershell", "-Command", cmd],
             check=True,
             capture_output=True,
-            text=True
+            text=True,
+            encoding="utf-8"
         )
         print(rs)
         log.logMessage(rs)
